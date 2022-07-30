@@ -2,6 +2,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Paintings from "./components/Paintings";
 import Favourites from "./components/Favourites";
+import Footer from "./components/Footer";
 import { useState } from "react";
 
 import { Routes, Route } from "react-router-dom";
@@ -116,11 +117,14 @@ const App = () => {
         <Route
           path="/"
           element={
-            <Paintings
-              paintings={paintings}
-              addToFavourites={addToFavourites}
-              removeFromFavourites={removeFromFavourites}
-            />
+            <>
+              <Paintings
+                paintings={paintings}
+                addToFavourites={addToFavourites}
+                removeFromFavourites={removeFromFavourites}
+              />
+              <Footer />
+            </>
           }
         />
         <Route
