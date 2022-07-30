@@ -4,10 +4,10 @@ import Paintings from "./components/Paintings";
 import Favourites from "./components/Favourites";
 import { useState } from "react";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-function App() {
-  const [numFavs, setNumFavs] = useState([]);
+const App = () => {
+  const [numFavs, setNumFavs] = useState(0);
   const [favs, setFavs] = useState([]);
   const [paintings] = useState([
     {
@@ -81,70 +81,61 @@ function App() {
   };
 
   function addToFavourites(id) {
-    console.log("Painting is added to favouirites");
-    setNumFavs(numFavs + 1);
-    // paintings.map((p) => {
-    //   if (p.id === id) {
-    //     if (p.fav === 0) {
-    //       p.fav = p.fav + 1;
-    //       console.log("product id = ", p.id, " added = ", p.fav);
-    //     } else {
-    //       alert("Painting has already been added to your favourites list.");
-    //     }
-    //   }
-    // });
     paintings.forEach((painting) => {
       if (painting.id === id) {
-        painting.fav = 1;
+        if (painting.fav === 0) {
+          painting.fav = 1;
+          setNumFavs(numFavs + 1);
+          console.log("Painting is added to favouirites");
+        } else {
+          alert("Painting has already been added to your favourites list.");
+        }
       }
-      console.log(painting.fav);
+      console.log("Number of favourites: " + numFavs);
     });
     refreshFavs();
   }
 
   function removeFromFavourites(id) {
-    console.log("Painting is removed from favouirites. JEBI SE");
-    setNumFavs(numFavs - 1);
-    paintings.forEach((painting) => {
+    paintings.map((painting) => {
       if (painting.id === id) {
-        painting.fav = 0;
+        if (painting.fav === 1) {
+          painting.fav = 0;
+          const a = numFavs - 1;
+          setNumFavs(a);
+          refreshFavs();
+        }
       }
-      console.log(painting.fav);
     });
-    refreshFavs();
   }
 
-  // return (
-  //   <BrowserRouter className="App">
-  //     <NavBar />
-  //     <Routes>
-  //       <Route
-  //         path="/"
-  //         element={
-  //           <Paintings
-  //             paintings={paintings}
-  //             addToFavourites={addToFavourites}
-  //           />
-  //         }
-  //       />
-  //       <Route
-  //         path="/favourites"
-  //         element={<Favourites paintings={favs} numFavs={numFavs} />}
-  //       />
-  //     </Routes>
-  //   </BrowserRouter>
-  // );
   return (
     <div className="App">
       <NavBar />
-      <Paintings
-        paintings={paintings}
-        addToFavourites={addToFavourites}
-        removeFromFavourites={removeFromFavourites}
-      />
-      <Favourites paintings={favs} numFavs={numFavs} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Paintings
+              paintings={paintings}
+              addToFavourites={addToFavourites}
+              removeFromFavourites={removeFromFavourites}
+            />
+          }
+        />
+        <Route
+          path="/favourites"
+          element={
+            <Favourites
+              paintings={favs}
+              numFavs={numFavs}
+              removeFromFavourites={removeFromFavourites}
+            />
+          }
+        />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

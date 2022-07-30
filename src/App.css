@@ -6,8 +6,7 @@
 
 h1 {
   margin: 5px;
-  font-family: cursive;
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 100;
   padding-left: 45px;
 }
@@ -18,7 +17,11 @@ h1 {
   margin-top: 0px;
   margin-bottom: 40px;
 }
-
+.headNav img {
+  margin: 5px;
+  width: 600px;
+  padding-left: 40px;
+}
 .navBar {
   display: flex;
   flex-direction: row;

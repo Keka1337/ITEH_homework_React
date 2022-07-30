@@ -1,7 +1,7 @@
 import React from "react";
 import OnePainting from "./OnePainting.jsx";
 
-const Paintings = ({ paintings, addToFavourites, removeFromFavourites }) => {
+const Paintings = ({ paintings, addToFavourites }) => {
   return (
     <div className="all-paintings">
       {paintings.map((p) => (
@@ -9,7 +9,6 @@ const Paintings = ({ paintings, addToFavourites, removeFromFavourites }) => {
           painting={p}
           key={p.id}
           addToFavourites={addToFavourites}
-          removeFromFavourites={removeFromFavourites}
           inFavs={1}
         />
       ))}

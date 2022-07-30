@@ -1,13 +1,17 @@
 import React from "react";
 import OnePainting from "./OnePainting";
 
-const Favourites = ({ paintings }) => {
+const Favourites = ({ paintings, removeFromFavourites }) => {
   return (
     <>
-      <h1>Your favourite paintings</h1>
       <div className="fav-container">
         {paintings.map((p) => (
-          <OnePainting painting={p} key={p.id} inFavs={0} />
+          <OnePainting
+            painting={p}
+            key={p.id}
+            inFavs={0}
+            removeFromFavourites={removeFromFavourites}
+          />
         ))}
       </div>
     </>

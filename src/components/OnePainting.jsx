@@ -25,6 +25,11 @@ const OnePainting = ({
             <a className="btn" onClick={() => addToFavourites(painting.id)}>
               <MdOutlineFavorite size={"2rem"} />
             </a>
+            {painting.fav === 1 ? (
+              <p style={{ color: "white" }}>Your fav!</p>
+            ) : (
+              <></>
+            )}
           </>
         ) : (
           <a className="btn" onClick={() => removeFromFavourites(painting.id)}>
