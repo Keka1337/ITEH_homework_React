@@ -87,6 +87,9 @@ const App = () => {
         if (painting.fav === 0) {
           painting.fav = 1;
           setNumFavs(numFavs + 1);
+          alert(
+            "Painting has been successfully added to your favourites list."
+          );
           console.log("Painting is added to favouirites");
         } else {
           alert("Painting has already been added to your favourites list.");
@@ -105,6 +108,9 @@ const App = () => {
           const a = numFavs - 1;
           setNumFavs(a);
           refreshFavs();
+          alert(
+            "Painting has been successfully removed from your favourites list."
+          );
         }
       }
     });
