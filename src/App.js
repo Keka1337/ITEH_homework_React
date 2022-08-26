@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 
 import { Routes, Route } from "react-router-dom";
+import HisLife from "./components/HisLife";
 
 const App = () => {
   const [numFavs, setNumFavs] = useState(0);
@@ -143,6 +144,7 @@ const App = () => {
             />
           }
         />
+        <Route path="/hislife" element={<HisLife />} />
       </Routes>
     </div>
   );

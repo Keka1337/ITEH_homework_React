@@ -36,7 +36,7 @@ function Footer() {
               <Link to="/favourites" style={{ padding: "5px" }}>
                 YOUR FAVOURITES
               </Link>
-              <Link to="/movies" style={{ padding: "5px" }}>
+              <Link to="/hislife" style={{ padding: "5px" }}>
                 HIS LIFE
               </Link>
               <button

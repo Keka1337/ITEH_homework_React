@@ -13,12 +13,9 @@ function NavBar() {
         process.”
       </p>
       <div className="navBar">
-        {/* <a className="fav-paintings">
-          <div className="fav-paintings-num">0</div>
-        </a> */}
         <Link to="/">Paintings</Link>
         <Link to="/favourites">Your favourites</Link>
-        <Link to="/movies">His life</Link>
+        <Link to="/hislife">His life</Link>
       </div>
     </div>
   );

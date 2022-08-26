@@ -159,6 +159,7 @@ a:hover {
 /* FOOTER */
 
 .footer {
+  margin-top: 5px;
   position: relative;
   left: 0;
   right: 0;
@@ -199,3 +200,16 @@ a:hover {
   background-color: black;
 }
 /**************************************************************************/
+
+.biography {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  border-bottom: solid black 2px;
+}
+
+.biography img {
+  width: 330px;
+  padding: 5px;
+}

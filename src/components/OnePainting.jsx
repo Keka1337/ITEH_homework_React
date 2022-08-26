@@ -51,12 +51,12 @@ const OnePainting = ({
             >
               <MdOutlineFavorite size={"2rem"} />
             </a>
-            <a
+            {/* <a
               className="btn"
               onClick={() => removeFromFavourites(painting.id)}
             >
               <MdOutlineInsertComment size={"2rem"} />
-            </a>
+            </a> */}
           </div>
         )}
       </div>
