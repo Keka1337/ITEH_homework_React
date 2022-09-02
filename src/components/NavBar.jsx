@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ numFavs }) {
   return (
     <div className="headNav">
       <img
@@ -14,7 +14,7 @@ function NavBar() {
       </p>
       <div className="navBar">
         <Link to="/">Paintings</Link>
-        <Link to="/favourites">Your favourites</Link>
+        <Link to="/favourites">Your favourites - {numFavs}</Link>
         <Link to="/hislife">His life</Link>
       </div>
     </div>

@@ -119,7 +119,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar numFavs={numFavs} />
       <Routes>
         <Route
           path="/"
@@ -128,7 +128,7 @@ const App = () => {
               <Paintings
                 paintings={paintings}
                 addToFavourites={addToFavourites}
-                removeFromFavourites={removeFromFavourites}
+                // removeFromFavourites={removeFromFavourites}
               />
               <Footer />
             </>
