@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import { Routes, Route } from "react-router-dom";
 import HisLife from "./components/HisLife";
+import Comments from "./components/Comments";
 
 const App = () => {
   const [numFavs, setNumFavs] = useState(0);
@@ -71,7 +72,7 @@ const App = () => {
       title: "Wheat Field with Cypresses, 1889",
       museum: "The Metropolitan Museum of Art, New York",
       imageURL:
-        "https://www.libertypuzzles.com/userfiles/media/images/5281/wheat-field-and-cypresses-image-1600.jpg",
+        "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/wheat-field-with-cypresses-1-by-van-gogh-vincent-van-gogh.jpg",
       fav: 0,
     },
   ]);
@@ -145,6 +146,7 @@ const App = () => {
           }
         />
         <Route path="/hislife" element={<HisLife />} />
+        <Route path="/comments" element={<Comments />} />
       </Routes>
     </div>
   );

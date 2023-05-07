@@ -16,6 +16,7 @@ function NavBar({ numFavs }) {
         <Link to="/">Paintings</Link>
         <Link to="/favourites">Your favourites - {numFavs}</Link>
         <Link to="/hislife">His life</Link>
+        <Link to="/comments">Comments</Link>
       </div>
     </div>
   );
